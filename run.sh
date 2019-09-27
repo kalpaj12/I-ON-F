@@ -40,4 +40,9 @@ if [ ! -e "$Path/$FolderName/$FileName" ]; then
 else
     echo Instance already installed on
     cat $Path/$FolderName/$FileName
+
+    echo Updating repo
+    cd "$Path/$FolderName"
+    git pull origin master
+
 fi
