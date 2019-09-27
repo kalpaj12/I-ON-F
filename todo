@@ -1,7 +1,6 @@
 Primary:
-1. Forget existing ssid connection
-2. Connect to I-ON based on bssid
-3. Enable crontab from run.sh
+1. Connect to I-ON based on bssid
+2. Enable crontab from run.sh
 
 Secondary:
 1. Complete README.md

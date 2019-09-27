@@ -25,7 +25,8 @@ if [ ! -e "$Path/$FolderName/$FileName" ]; then
 
     # install python requirements
     pip install delegator.py
-
+    pip install subprocess
+    pip install commands
 
     # make python file executable, to add to crontab
     chmod +x main.py
