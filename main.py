@@ -29,7 +29,15 @@ def job():
                 if (parts[0] == "802-11-wireless" and parts[2].find(optimal_ssid) != -1):
                     os.system("nmcli connection delete uuid " + parts[1])
 
-        # connect to optmised_bssid here
+            connectNetwork = "nmcli d wifi connect " + optimal_ssid
+            os.system(connectNetwork)
+
+            newNetworkquery = "nmcli c modify " + optimal_ssid + \
+                " 802-11-wireless.bssid " + optimal_bssid
+            os.system(newNetworkquery)
+
+            newNetworkquery = "nmcli c up " + optimal_ssid
+            os.system(newNetworkquery)
 
         else:
             print("on optmised connection")

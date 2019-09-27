@@ -31,7 +31,7 @@ if [ ! -e "$Path/$FolderName/$FileName" ]; then
     # make python file executable, to add to crontab
     chmod +x main.py
 
-    # (crontab -l ; echo "*/5 * * * * $Path/$FolderName/main.py") | crontab -
+    (crontab -l ; echo "*/5 * * * * $Path/$FolderName/main.py") | crontab -
 
     echo "${COLOR_GREEN}Prelim Init successful${NC}"
 
