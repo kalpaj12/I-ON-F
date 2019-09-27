@@ -1,6 +1,7 @@
 #!/bin/bash
 
-Path="~"
+user=$(whoami)
+Path="/home/$user"
 FolderName="I-ON-F-kalpaj12"
 FileName="do_not_delete.txt"
 
