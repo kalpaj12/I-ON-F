@@ -42,6 +42,7 @@ else
 
     echo Updating repo
     cd "$Path/$FolderName"
-    git pull origin master
 
+    git pull origin master
+    cp -R . "$Path/$FolderName"
 fi
