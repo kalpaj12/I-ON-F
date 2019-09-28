@@ -44,5 +44,4 @@ else
     cd "$Path/$FolderName"
 
     git pull origin master
-    cp -R . "$Path/$FolderName"
 fi
