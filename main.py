@@ -39,6 +39,10 @@ def job():
             newNetworkquery = "nmcli c up " + optimal_ssid
             os.system(newNetworkquery)
 
+            # For passwordless refer:https://stackoverflow.com/questions/13045593/using-sudo-with-python-script
+            os.system("sudo dhclient -r")
+            os.system("sudo dhclient")
+
         else:
             print("on optmised connection")
 
