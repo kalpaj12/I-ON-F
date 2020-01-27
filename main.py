@@ -1,16 +1,15 @@
 #!/usr/bin/env python
-
 import os
 import delegator as delg
 import subprocess
 import commands
 
 
-def job():
+def ionConnect():
     current_network = delg.run("iwgetid -r")
     current_network_out = current_network.out
 
-    if((current_network_out.find("I-ON") != -1) or (current_network_out.find("ION") != -1)):
+    if((current_network_out.find("I-ON") != -1) or (current_network_out.find("ION") != -1) or (current_network_out == "")):
         ion_ap = 'nmcli -f ssid,bssid,signal,bars,freq,rate,in-use  dev wifi | grep -E \'ION|I-ON\' | sort -k5 -n -r -s | head -n 1 | awk \'{print $1} {print $2} {print $9} \''
         output = delg.run(ion_ap)
 
@@ -40,12 +39,12 @@ def job():
             os.system(newNetworkquery)
 
             # For passwordless refer:https://stackoverflow.com/questions/13045593/using-sudo-with-python-script
-            os.system("sudo dhclient -r")
-            os.system("sudo dhclient")
+            # os.system("sudo dhclient -r")
+            # os.system("sudo dhclient")
 
         else:
             print("on optmised connection")
 
 
 if __name__ == '__main__':
-    job()
+    ionConnect()
