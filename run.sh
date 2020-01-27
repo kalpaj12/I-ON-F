@@ -2,7 +2,7 @@
 
 user=$(whoami)
 Path="/home/$user"
-FolderName="I-ON-F-kalpaj12"
+FolderName=".I-ON-F-kalpaj12"
 FileName="do_not_delete.txt"
 
 COLOR_GREEN='\033[0;32m'
